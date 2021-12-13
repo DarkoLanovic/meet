@@ -1,3 +1,5 @@
+// File where I'll write the code for my functions
+
 'use strict';
 
 module.exports.hello = async (event) => {
