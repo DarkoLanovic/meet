@@ -85,11 +85,11 @@ functions:
           method: get
 
   getCalendarEvents:
-    hendler: hendler.getCalendarEvents
+    handler: handler.getCalendarEvents
     events:
-      -http:
-        path: api/get-events/{access_token}
-        metod: get
+      - http:
+          path: api/get-events/{access_token}
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
