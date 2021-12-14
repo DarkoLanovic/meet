@@ -18,20 +18,39 @@
     </style>
 
     <main id="container">
-      <h1>OAuth2 Test</h1>
+      <h1>- OAuth2 Test -</h1>
+
+      <!-- Step 1 -->
       <h4><b>Step 1:</b> Get the Auth URL</h4>
       <p>Click the button below to get your auth url.</p>
       <button id="getCode">Get OAuth URL</button>
       <p id="result"></p>
       <a id="authURL" href target="_blank">Click to authorise</a>
+
+      <!-- Step 2 -->
+      <h4>Step 2: Get your code and exchange for an access token</h4>
+      <p>
+        After you’re redirected back to your Meet app on GitHub, copy the code
+        from the URI.
+      </p>
+      <br />
+      <label
+        >Code input
+        <input id="code" type="text" value="" />
+      </label>
+      <button id="getToken">Get Token</button>
+      <p id="accessToken"></p>
     </main>
 
     <script type="text/javascript">
+      // -------- STEP 1 --------
       const getCodeElement = document.getElementById("getCode");
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
-      // Replace this with your own endpoint
-      const getAuthURL = "get-auth-url";
+
+      // My own endpoint
+      const getAuthURL =
+        "https://06oxy5ugn2.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
 
       getCodeElement.onclick = function () {
         fetch(getAuthURL)
@@ -45,6 +64,30 @@
             // then add it to the html
             resultElement.innerText = result;
             resultLink.href = authUrl;
+          });
+      };
+
+      // -------- STEP 2 --------
+      const codeValue = document.getElementById("code");
+      const getAccessToken = document.getElementById("getToken");
+      const accessTokenElement = document.getElementById("accessToken");
+      const getToken =
+        "https://06oxy5ugn2.execute-api.us-east-1.amazonaws.com/dev/api/token";
+
+      getAccessToken.onclick = function () {
+        let code = codeValue.value;
+
+        // if the authorization code is not URL-encoded, then URL-encode it.
+        if (decodeURIComponent(code) === code) {
+          code = encodeURIComponent(codeValue.value);
+        }
+        const getTokenRequest = getToken + "/" + code;
+        fetch(getTokenRequest)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (json) {
+            accessTokenElement.innerText = JSON.stringify(json);
           });
       };
     </script>
