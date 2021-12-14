@@ -102,6 +102,11 @@
       const getCalendarEvents =
         " https://06oxy5ugn2.execute-api.us-east-1.amazonaws.com/dev/api/get-events";
 
+      const getEvents = document.getElementById("getEvents");
+      const events = document.getElementById("events");
+      const getCalendarEvents =
+        "https://06oxy5ugn2.execute-api.us-east-1.amazonaws.com/dev/api/get-events";
+
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
         const eventRequest = getCalendarEvents + "/" + access_token;
