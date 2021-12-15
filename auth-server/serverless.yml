@@ -83,6 +83,7 @@ functions:
       - http:
           path: api/token/{code}
           method: get
+          cors: true
 
   getCalendarEvents:
     handler: handler.getCalendarEvents
