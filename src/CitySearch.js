@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 
+
 class CitySearch extends Component {
   state = {
     query: '',
@@ -35,7 +36,9 @@ class CitySearch extends Component {
         />
         <ul className="suggestions">
           {this.state.suggestions.map((suggestions) => (
-            <li key={suggestions} onClick={() => this.handleItemClicked(suggestions)}>{suggestions}</li>
+            <li 
+              key={suggestions} 
+              onClick={() => this.handleItemClicked(suggestions)}>{suggestions}</li>
           ))}
           <li>
             <b>See all cities</b>

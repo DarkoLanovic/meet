@@ -1,13 +1,21 @@
 const mockData = [
-    {
-      "kind": "calendar#event",
-      "etag": "\"p3308h454qfgum0g\""
-    },
-    {
-      "kind": "calendar#event",
-      "etag": "\"3181161784712000\""
-    }
-  ];
+  {
+    kind: "calendar#event",
+    etag: '"p3308h454qfgum0g"',
+    id: "f86ad0s89f6asdf0as5d6",
+    location: "Los Angeles, CA",
+    timeZone: "Los Angeles/US",
+    description: "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
+    summary: "Learn JavaScript"
+  },
+  {
+    kind: "calendar#event",
+    etag: '"3181161784712000"',
+    id: "fds89a7f80as7df089asf",
+    location: "Berlin, Germany",
+    timeZone: "Europe/Berlin",
+  },
+];
   
   export { mockData };
 
