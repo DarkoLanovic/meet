@@ -24,26 +24,27 @@ describe("<Event /> component", () => {
   });
 
   
-//   test('the event element is collapsed by default', () => {
-//     EventWrapper.setState({
-//       collapsed: true,
-//     });
-//     expect(EventWrapper.state('collapsed')).toBe(true);
-//   });
-  
-//   test('click on a show-details button to expand the event details', () => {
-//     EventWrapper.setState({
-//       collapsed: true,
-//     });
-//     EventWrapper.find('.show-details-btn').simulate('click');
-//     expect(EventWrapper.state('collapsed')).toBe(false);
-//   });
 
-//   test('click on hide-details button to hide the evet details', () => {
-//     EventWrapper.setState({
-//       collapsed: false,
-//     });
-//     EventWrapper.find('.hide-details-btn').simulate('click');
-//     expect(EventWrapper.state('collapsed')).toBe(true);
-//   });
- });
+  test('the event element is collapsed by default', () => {
+    EventWrapper.setState({
+      collapsed: true,
+    });
+    expect(EventWrapper.state('collapsed')).toBe(true);
+  });
+  
+  test('click on a show-details button to expand the event details', () => {
+    EventWrapper.setState({
+      collapsed: true,
+    });
+    EventWrapper.find('.show-details-btn').simulate('click');
+    expect(EventWrapper.state('collapsed')).toBe(false);
+  });
+
+  test('click on hide-details button to hide the evet details', () => {
+    EventWrapper.setState({
+      collapsed: false,
+    });
+    EventWrapper.find('.hide-details-btn').simulate('click');
+    expect(EventWrapper.state('collapsed')).toBe(true);
+  });
+});

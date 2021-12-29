@@ -30,8 +30,8 @@ class CitySearch extends Component {
     return (
       <div className="CitySearch">
         <input 
-          type="text" 
-          className="city" 
+          className="city"
+          type="text"  
           value={this.state.query} 
           onChange={this.handleInputChanged} 
         />
