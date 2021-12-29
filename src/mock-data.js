@@ -14,6 +14,8 @@ const mockData = [
     id: "fds89a7f80as7df089asf",
     location: "Berlin, Germany",
     timeZone: "Europe/Berlin",
+    description: "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
+    summary: "Learn JavaScript"
   },
 ];
   

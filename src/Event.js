@@ -9,6 +9,7 @@ class Event extends Component {
         <p className="location"></p>
         <p className="description"></p>
         <p className="show-details-btn"></p>
+        <p className="hide-details-btn"></p>
       </div>
     );
   }
