@@ -61,6 +61,6 @@ describe('<CitySearch /> component', () => {
     const suggestions = CitySearchWrapper.state('suggestions');
     CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
-  });
+  }); 
 
 });
