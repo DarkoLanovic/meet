@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 
-
 class CitySearch extends Component {
   state = {
     query: '',
     suggestions: []
   }
 
+
+  // "Event hendler function" for <input> for the <change> event
   handleInputChanged = (event) => {
     const value = event.target.value;
     const suggestions = this.props.locations.filter((location) => {
@@ -19,29 +20,34 @@ class CitySearch extends Component {
     });
   };
 
+
   handleItemClicked = (suggestion) => {
     this.setState({
-      query: suggestion
+      query: suggestion,
+      //suggestions: [],
     });
     this.props.updateEvents(suggestion);
   }
 
+  
   render() {
     return (
       <div className="CitySearch">
         <input 
           className="city"
           type="text"  
-          value={this.state.query} 
+          value={this.state.query}
+          // Event listener 
           onChange={this.handleInputChanged} 
         />
+        
         <ul className="suggestions">
-          {this.state.suggestions.map((suggestions) => (
+          {this.state.suggestions.map((suggestion) => (
             <li 
-              key={suggestions} 
-              onClick={() => this.handleItemClicked(suggestions)}>{suggestions}</li>
+              key={suggestion} 
+              onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
           ))}
-          <li>
+          <li key='all'>
             <b>See all cities</b>
           </li>
         </ul>

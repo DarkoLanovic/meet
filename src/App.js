@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import EventList from './EventList'; // This imports the EventList component into the App component.
+import EventList from './EventList'; 
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
@@ -18,7 +18,7 @@ updateEvents = (location) => {
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
   }
   render() {
     return (
@@ -26,9 +26,12 @@ class App extends Component {
       <div className="App">
          // Pass the "locations" and "updateEvents" to CitySearch as a prop 
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        
+        <NumberOfEvents />
+        
         // Pass the state to EventList as a prop of events
         <EventList events={this.state.events} /> 
-        <NumberOfEvents />
+       
       </div>
     );
   } 

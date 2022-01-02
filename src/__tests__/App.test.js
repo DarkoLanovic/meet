@@ -13,10 +13,11 @@ import { extractLocations, getEvents } from '../api';
 describe("<App /> component", () => {
   let AppWrapper;
   beforeAll(() => {
+    // AppWrapper is the shallow-rendered App component
     AppWrapper = shallow(<App />);
   });
   
-  test("render list of events", () => {
+  test("render EventList", () => {
     expect(AppWrapper.find(EventList)).toHaveLength(1);
   });
 

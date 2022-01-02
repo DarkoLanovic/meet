@@ -6,10 +6,11 @@ import { extractLocations } from '../api';
 
   
 describe('<CitySearch /> component', () => {
+    
     let locations, CitySearchWrapper;
     beforeAll(() => {
       locations = extractLocations(mockData);
-      CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+      CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
     });
   
   test('render text input', () => {
@@ -46,14 +47,20 @@ describe('<CitySearch /> component', () => {
 
   test('suggestion list match the query when changed', () => {
     CitySearchWrapper.setState({ query: '', suggestions: [] });
-    CitySearchWrapper.find(".city").simulate("change", {
-      target: { value: "Berlin" },
-    });
+    CitySearchWrapper.find('.city').simulate('change', {target: { value: 'Berlin' }});
     const query = CitySearchWrapper.state("query");
     const filteredLocations = locations.filter((location) => {
       return location.toUpperCase().indexOf(query.toUpperCase()) > -1;
     });
     expect(CitySearchWrapper.state("suggestions")).toEqual(filteredLocations);
+  });
+
+  test("selecting a suggestion should change query state", () => {
+    CitySearchWrapper.setState({
+      query: 'Berlin'  });
+    const suggestions = CitySearchWrapper.state('suggestions');
+    CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
+    expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
 });
