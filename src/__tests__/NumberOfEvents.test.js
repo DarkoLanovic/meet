@@ -12,7 +12,7 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
   });
 
-  test('renders input field and is not empty', () => {
+  test('renders not empty input field', () => {
     expect(NumberOfEventsWrapper.find('.numberOfEvents')).not.toEqual(0);
   });
 
@@ -22,11 +22,11 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   // test("input value is by default 32", () => {
-  //   expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).prop().value).toEqual(32);
+  //   expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).props().value).toEqual(32);
   // })
 
   // test("input type is entered is a number", () => {
-  //   expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).prop().type).toEqual('number');
+  //   expect(NumberOfEventsWrapper.find('.eventNumberInput').at(0).props().type).toEqual('number');
   // })
   
 });
