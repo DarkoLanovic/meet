@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './nprogress.css';
 import './App.css';
 import EventList from './EventList'; 
 import CitySearch from './CitySearch';
@@ -11,7 +12,20 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 32,
+  }
+
+  // to load events when the app loads - to make the API call and save inital data to state (?)
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+      this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
   }
 
   // Method that changes the events state
@@ -31,12 +45,12 @@ class App extends Component {
     return (
       // This displays all the components within the App div
       <div className="App">
-         // Pass the "locations" and "updateEvents" to CitySearch as a prop 
+         {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         
         <NumberOfEvents />
         
-        // Pass the state to EventList as a prop of events
+        {/* Pass the state to EventList as a prop of events */}
         <EventList events={this.state.events} /> 
        
       </div>

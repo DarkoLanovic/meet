@@ -9,9 +9,15 @@ class NumberOfEvents extends Component {
   updateNumberOfEvents = (event) => {
     const value = event.target.value
     this.props.udateEvent(null, value);
-    return this.setState({
-      query: value,
-    })
+    if(value < 1 || value > 32) {
+      this.setState({
+        query: value,
+      })
+    } else {
+      return this.setState({
+        query: value,
+      })
+    }
     
   }
   

@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 
 class CitySearch extends Component {
+  
   state = {
     query: '',
-    suggestions: []
+    suggestions: [],
+    showSuggestions: undefined
   }
-
 
   // "Event hendler function" for <input> for the <change> event
   handleInputChanged = (event) => {
@@ -20,34 +21,33 @@ class CitySearch extends Component {
     });
   };
 
-
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
-      //suggestions: [],
+      showSuggestions: false
     });
     this.props.updateEvents(suggestion);
   }
 
-  
   render() {
     return (
       <div className="CitySearch">
         <input 
           className="city"
           type="text"  
-          value={this.state.query}
+          value={this.state.query } 
           // Event listener 
-          onChange={this.handleInputChanged} 
+          onChange={this.handleInputChanged }         
+          onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
         
-        <ul className="suggestions">
+        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li 
               key={suggestion} 
-              onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
+              onClick={() => this.handleItemClicked(suggestion) }> {suggestion} </li>
           ))}
-          <li onClick={() => this.handleItemClicked('all')}>
+          <li onClick={() => this.handleItemClicked('all') }>
             <b>See all cities</b>
           </li>
         </ul>
