@@ -41,8 +41,14 @@ describe('<CitySearch /> component', () => {
     const suggestions = CitySearchWrapper.state('suggestions');
     expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
     for (let i = 0; i < suggestions.length; i += 1) {
-      expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
+      const x = CitySearchWrapper.find('.suggestions li').at(i).text().indexOf(suggestions[i]);
+      expect(x).toBeTruthy();
     }
+  });
+
+  test('query state', () => {
+    CitySearchWrapper.setState({ query: 'berlin' });
+    expect(CitySearchWrapper.state('query')).toEqual('berlin');
   });
 
   test('suggestion list match the query when changed', () => {
