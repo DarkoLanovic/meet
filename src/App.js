@@ -21,7 +21,7 @@ class App extends Component {
     const { numberOfEvents } = this.state;
     this.mounted = true;
     getEvents().then((events) => {
-      console.log(events)
+      // console.log(events)
       if (this.mounted) {
         this.setState({ 
           events: events.slice(0, numberOfEvents), 

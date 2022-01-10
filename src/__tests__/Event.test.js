@@ -13,8 +13,8 @@ describe("<Event /> component", () => {
   test('renders summary', () => {
     expect(EventWrapper.find('.summary')).toHaveLength(1);
   });
-  test('renders start-date and timezone', () => {
-    expect(EventWrapper.find('.start-date')).toHaveLength(1);
+  test('renders dateTime', () => {
+    expect(EventWrapper.find('.dateTime')).toHaveLength(1);
   });
   test('renders location', () => {
     expect(EventWrapper.find('.location')).toHaveLength(1);

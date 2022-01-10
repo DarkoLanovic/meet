@@ -1,4 +1,5 @@
 const mockData = [
+  
   {
     kind: "calendar#event",
     etag: '"p3308h454qfgum0g"',
@@ -34,10 +35,9 @@ const mockData = [
     "location": "New York, NY, USA",
     "creator": {
       "email": "fullstackwebdev@careerfoundry.com",
-      "self": true
-  }
+      "self": true,
+  },
 },
-
   {
         "kind": "calendar#event",
         "etag": "\"3187237556010000\"",
