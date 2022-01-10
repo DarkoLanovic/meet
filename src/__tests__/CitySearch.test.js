@@ -43,7 +43,7 @@ describe('<CitySearch /> component', () => {
     for (let i = 0; i < suggestions.length; i += 1) {
       const x = CitySearchWrapper.find('.suggestions li').at(i).text().indexOf(suggestions[i]);
       expect(x).toBeTruthy();
-    }
+    } 
   });
 
   test('query state', () => {

@@ -3,23 +3,23 @@ import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
   state = {
-    query: 32,
+    NumberOfEvents: 32,
   }
 
-  updateNumberOfEvents = (event) => {
+  handleNumberChanged = (event) => {
     const value = event.target.value
-    this.props.udateEvent(null, value);
+    //this.props.udateEvent(null, value);
     if(value < 1 || value > 32) {
       this.setState({
-        query: value,
+        NumberOfEvents: '',
       })
     } else {
-      return this.setState({
-        query: value,
-      })
+      this.setState({
+        NumberOfEvents: value,
+      });
     }
-    
-  }
+    this.props.updateNumberOfEvents(event.target.value); 
+  };
   
   render() {
     return( 
@@ -28,8 +28,8 @@ class NumberOfEvents extends Component {
           <input 
             type="number"
             className="numberOfEvents"
-            value={this.state.query}
-            onChange={this.updateNumberOfEvents}
+            value={this.state.NumberOfEvents}
+            onChange={this.handleNumberChanged}
           />
       </div>
     )

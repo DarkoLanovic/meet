@@ -12,14 +12,21 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    numberOfEvents: 32,
+    currentLocation: 'all',
   }
 
   // to load events when the app loads - to make the API call and save inital data to state (?)
   componentDidMount() {
+    const { numberOfEvents } = this.state;
     this.mounted = true;
     getEvents().then((events) => {
+      console.log(events)
       if (this.mounted) {
-      this.setState({ events, locations: extractLocations(events) });
+        this.setState({ 
+          events: events.slice(0, numberOfEvents), 
+          locations: extractLocations(events) 
+        });
       }
     });
   }
@@ -34,21 +41,37 @@ class App extends Component {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
+        const { numberOfEvents } = this.state;
       this.setState({
-        events: locationEvents
+        events: locationEvents.slice(0, numberOfEvents)
       });
     });
+  }
+
+  updateNumberOfEvents = (eventCount) => {
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    this.updateEvents(currentLocation, eventCount);
   }
 
 
   render() {
     return (
-      // This displays all the components within the App div
+      // This displays all the components within the App component
       <div className="App">
+         
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <CitySearch 
+              locations={this.state.locations} 
+              updateEvents={this.updateEvents} 
+        />
         
-        <NumberOfEvents />
+        <NumberOfEvents 
+              numberOfEvents={this.state.numberOfEvents} 
+              updateNumberOfEvents={this.updateNumberOfEvents}  
+        />
         
         {/* Pass the state to EventList as a prop of events */}
         <EventList events={this.state.events} /> 
