@@ -32,117 +32,111 @@ const mockData = [
     updated: "2020-07-01T13:42:09.092Z",
     summary: "Intro to AngularJS-Remote",
     description: "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. Join us to get introduced to this wonderful framework and dive deep into its features. ",
+    location: "New York, NY, USA",
+  },
+
+  {
+    kind: "calendar#event",
+    etag: "\"3187237556010000\"",
+    id: "111vmlbl7p8gmc0fbf5u107p8u_20200723T070000Z",
+    status: "confirmed",
+    htmlLink: "https://www.google.com/calendar/event?eid=MTExdm1sYmw3cDhnbWMwZmJmNXUxMDdwOHVfMjAyMDA3MjNUMDcwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    created: "2020-07-01T15:47:59.000Z",
+    updated: "2020-07-01T15:52:58.005Z",
+    summary: "React Native Tokyo",
+    description: "We meet every Monday and Thursday to talk about React Native and native app development in general. React Native Tokyo is an inclusive community that tries to cater to all levels of learners during meetups. \n\nJoin us if you are curious to hear about what's new in the field of native app development.",
+    location: "Tokyo, Japan",
+        
+  },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187232583216000\"",
+    "id": "3m5n6mcl1aqrdsg6k5vkr6to5p_20200725T163000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M201bjZtY2wxYXFyZHNnNms1dmtyNnRvNXBfMjAyMDA3MjVUMTYzMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:54:32.000Z",
+    "updated": "2020-07-01T15:11:31.608Z",
+    "summary": "Build Your First App with JavaScript",
+    "description": "You know basic HTML and CSS, and interested to learn the next thing about web development? Well, you are at the right place. Our workshop will take you to the amazing world of JavaScript. \n\nIn this workshop, you'll:\n- Learn JavaScript, from basics to advanced topics\n- Create your first app",
+    "location": "Amsterdam, Netherlands",
+    "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+    }
+  },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187232047578000\"",
+    "id": "013qoq4ns44cam7q4hqcf13eab_20200628T230000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=MDEzcW9xNG5zNDRjYW03cTRocWNmMTNlYWJfMjAyMDA2MjhUMjMwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T15:05:49.000Z",
+    "updated": "2020-07-01T15:07:03.789Z",
+    "summary": "jQuery and More",
+    "description": "Do you know jQuery is used by around 70 percent of the 10 million most popular websites as of May 2019? \n\nThough many consider it dead after Angular and Express gained popularity, jQuery is still an important part of many websites. \n\nIn our workshop, we teach basic to advanced jQuery where you will also be able to build a simple app using it. If you are familiar with JS, join us to learn probably its most popular library.",
+    "location": "Santiago, Santiago Metropolitan Region, Chile",
+    "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+    }
+  },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187221506816000\"",
+    "id": "48m09le389vijbqfs2mcr6i87q_20200630T070000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NDhtMDlsZTM4OXZpamJxZnMybWNyNmk4N3FfMjAyMDA2MzBUMDcwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:39:01.000Z",
+    "updated": "2020-07-01T13:39:13.408Z",
+    "summary": "Node Gang",
+    "description": "We meet every Tuesday to talk about Node or JavaScript in general. Node Gang is an inclusive community that tries to cater to all levels of learners during meetups. Join us if you are curious to hear about what's new in Node, patterns, interesting npm packages, and practices.",
+    "location": "Sydney NSW, Australia",
+    "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+    }
+  },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187234769062000\"",
+    "id": "46717o686s7ibj1lp300pabro9_20200722T180000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NDY3MTdvNjg2czdpYmoxbHAzMDBwYWJybzlfMjAyMDA3MjJUMTgwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T15:28:56.000Z",
+    "updated": "2020-07-01T15:29:44.531Z",
+    "summary": "React Workshop",
+    "description": "React is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
+    "location": "Toronto, ON, Canada",
+    "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+    }
+  },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187221858184000\"",
+    "id": "3gi3kabkm3bua5lq3jhscc8s4c_20200629T200000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2dpM2thYmttM2J1YTVscTNqaHNjYzhzNGNfMjAyMDA2MjlUMjAwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:23:24.000Z",
+    "updated": "2020-07-01T13:42:09.092Z",
+    "summary": "Intro to AngularJS-Remote",
+    "description": "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. Join us to get introduced to this wonderful framework and dive deep into its features. ",
     "location": "New York, NY, USA",
     "creator": {
       "email": "fullstackwebdev@careerfoundry.com",
-      "self": true,
+      "self": true
+    }
   },
-},
-  {
-        "kind": "calendar#event",
-        "etag": "\"3187237556010000\"",
-        "id": "111vmlbl7p8gmc0fbf5u107p8u_20200723T070000Z",
-        "status": "confirmed",
-        "htmlLink": "https://www.google.com/calendar/event?eid=MTExdm1sYmw3cDhnbWMwZmJmNXUxMDdwOHVfMjAyMDA3MjNUMDcwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-        "created": "2020-07-01T15:47:59.000Z",
-        "updated": "2020-07-01T15:52:58.005Z",
-        "summary": "React Native Tokyo",
-        "description": "We meet every Monday and Thursday to talk about React Native and native app development in general. React Native Tokyo is an inclusive community that tries to cater to all levels of learners during meetups. \n\nJoin us if you are curious to hear about what's new in the field of native app development.",
-        "location": "Tokyo, Japan",
-        "creator": {
-         "email": "fullstackwebdev@careerfoundry.com",
-         "self": true
-        }
-      },
-
-    {
-          "kind": "calendar#event",
-          "etag": "\"3187232583216000\"",
-          "id": "3m5n6mcl1aqrdsg6k5vkr6to5p_20200725T163000Z",
-          "status": "confirmed",
-          "htmlLink": "https://www.google.com/calendar/event?eid=M201bjZtY2wxYXFyZHNnNms1dmtyNnRvNXBfMjAyMDA3MjVUMTYzMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-          "created": "2020-07-01T13:54:32.000Z",
-          "updated": "2020-07-01T15:11:31.608Z",
-          "summary": "Build Your First App with JavaScript",
-          "description": "You know basic HTML and CSS, and interested to learn the next thing about web development? Well, you are at the right place. Our workshop will take you to the amazing world of JavaScript. \n\nIn this workshop, you'll:\n- Learn JavaScript, from basics to advanced topics\n- Create your first app",
-          "location": "Amsterdam, Netherlands",
-          "creator": {
-           "email": "fullstackwebdev@careerfoundry.com",
-           "self": true
-          }
-        },
-
-      {
-            "kind": "calendar#event",
-            "etag": "\"3187232047578000\"",
-            "id": "013qoq4ns44cam7q4hqcf13eab_20200628T230000Z",
-            "status": "confirmed",
-            "htmlLink": "https://www.google.com/calendar/event?eid=MDEzcW9xNG5zNDRjYW03cTRocWNmMTNlYWJfMjAyMDA2MjhUMjMwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-            "created": "2020-07-01T15:05:49.000Z",
-            "updated": "2020-07-01T15:07:03.789Z",
-            "summary": "jQuery and More",
-            "description": "Do you know jQuery is used by around 70 percent of the 10 million most popular websites as of May 2019? \n\nThough many consider it dead after Angular and Express gained popularity, jQuery is still an important part of many websites. \n\nIn our workshop, we teach basic to advanced jQuery where you will also be able to build a simple app using it. If you are familiar with JS, join us to learn probably its most popular library.",
-            "location": "Santiago, Santiago Metropolitan Region, Chile",
-            "creator": {
-             "email": "fullstackwebdev@careerfoundry.com",
-             "self": true
-            }
-          },
-
-        {
-              "kind": "calendar#event",
-              "etag": "\"3187221506816000\"",
-              "id": "48m09le389vijbqfs2mcr6i87q_20200630T070000Z",
-              "status": "confirmed",
-              "htmlLink": "https://www.google.com/calendar/event?eid=NDhtMDlsZTM4OXZpamJxZnMybWNyNmk4N3FfMjAyMDA2MzBUMDcwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-              "created": "2020-07-01T13:39:01.000Z",
-              "updated": "2020-07-01T13:39:13.408Z",
-              "summary": "Node Gang",
-              "description": "We meet every Tuesday to talk about Node or JavaScript in general. Node Gang is an inclusive community that tries to cater to all levels of learners during meetups. Join us if you are curious to hear about what's new in Node, patterns, interesting npm packages, and practices.",
-              "location": "Sydney NSW, Australia",
-              "creator": {
-               "email": "fullstackwebdev@careerfoundry.com",
-               "self": true
-              }
-            },
-
-          {
-                "kind": "calendar#event",
-                "etag": "\"3187234769062000\"",
-                "id": "46717o686s7ibj1lp300pabro9_20200722T180000Z",
-                "status": "confirmed",
-                "htmlLink": "https://www.google.com/calendar/event?eid=NDY3MTdvNjg2czdpYmoxbHAzMDBwYWJybzlfMjAyMDA3MjJUMTgwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-                "created": "2020-07-01T15:28:56.000Z",
-                "updated": "2020-07-01T15:29:44.531Z",
-                "summary": "React Workshop",
-                "description": "React is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-                "location": "Toronto, ON, Canada",
-                "creator": {
-                 "email": "fullstackwebdev@careerfoundry.com",
-                 "self": true
-                }
-              },
-
-            {
-                  "kind": "calendar#event",
-                  "etag": "\"3187221858184000\"",
-                  "id": "3gi3kabkm3bua5lq3jhscc8s4c_20200629T200000Z",
-                  "status": "confirmed",
-                  "htmlLink": "https://www.google.com/calendar/event?eid=M2dpM2thYmttM2J1YTVscTNqaHNjYzhzNGNfMjAyMDA2MjlUMjAwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-                  "created": "2020-07-01T13:23:24.000Z",
-                  "updated": "2020-07-01T13:42:09.092Z",
-                  "summary": "Intro to AngularJS-Remote",
-                  "description": "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. Join us to get introduced to this wonderful framework and dive deep into its features. ",
-                  "location": "New York, NY, USA",
-                  "creator": {
-                   "email": "fullstackwebdev@careerfoundry.com",
-                   "self": true
-                  }
-                },
 
 ];
   
-  export { mockData };
+export { mockData };
 
 
 
