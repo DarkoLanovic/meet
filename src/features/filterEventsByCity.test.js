@@ -7,10 +7,12 @@ import { extractLocations } from '../api';
 import { mockData } from '../mock-data';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 
+
 // The code starts by importing two necessary 
 // built-in functions, loadFeature() and defineFeature(), from jest-cucumber. 
 // The first one, loadFeature(), is used to load a Gherkin file, 
 // and the second, defineFeature(), is used to define the code for that file (feature).
+
 
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 

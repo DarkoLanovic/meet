@@ -1,20 +1,70 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Event extends Component {
-  render() {
-    let event = this.props.event;
+  state = {
+    showDetails: null,
+  }
 
+  changeShow(showDetails){
+    if(showDetails){
+      this.setState({
+        showDetails: false
+      })
+    }
+    if(!showDetails){
+      this.setState({
+        showDetails: true
+      })
+    }
+  }
+
+  render() {
+    let { showDetails } = this.state;
+    const { event } = this.props;
     return (
-      <div>
-        <p className="summary">{event.summary}</p>
-        <p className="timeZone">{event.timeZone}</p>
-        <p className="dateTime">{event.dateTime}</p>
-        <p className="location">{event.location}</p>
-        <p className="description">{event.description}</p>
-        <p className="show-details-btn"></p>
-        <p className="hide-details-btn"></p>
-      </div>
-    );
+      <div className="event event-container">
+       
+        <h1 className="summary">{ event.summary }</h1>
+        <p className="dateTime">{ event.dateTime }</p>
+        <p className="location">{ event.location }</p>
+        
+        {showDetails
+          ? <div className="event__Details additional-info">
+            <h2>About Event</h2>
+            <a href={ event.htmlLink } className="event-link">See details on Google calendar</a>
+            <p className="description">{ event.description }</p>
+          </div>
+          : null
+        }
+
+        {showDetails
+          ? <button 
+                  className="details-btn btn-text"  
+                  onClick={() => this.changeShow(showDetails)}
+            >
+              Hide Details
+            </button>
+
+          : <button 
+                  className="details-btn btn-text"  
+                  onClick={() => this.changeShow(showDetails)}
+            >
+              Show Details
+            </button>
+        }
+
+      </div> 
+      
+    )
   }
 }
+
 export default Event;
+
+
+
+
+
+
+
+
