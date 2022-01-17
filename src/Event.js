@@ -29,7 +29,7 @@ class Event extends Component {
         <p className="location">{ event.location }</p>
         
         {showDetails
-          ? <div className="event_details additional-info">
+          ? <div className="event_details">
             <h2>About Event</h2>
             <a href={ event.htmlLink } className="event-link">See details on Google calendar</a>
             <p className="description">{ event.description }</p>

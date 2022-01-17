@@ -24,19 +24,6 @@ const mockData = [
 
   {
     kind: "calendar#event",
-    etag: "\"3187221858184000\"",
-    id: "3gi3kabkm3bua5lq3jhscc8s4c_20200629T200000Z",
-    status: "confirmed",
-    htmlLink: "https://www.google.com/calendar/event?eid=M2dpM2thYmttM2J1YTVscTNqaHNjYzhzNGNfMjAyMDA2MjlUMjAwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-    created: "2020-07-01T13:23:24.000Z",
-    updated: "2020-07-01T13:42:09.092Z",
-    summary: "Intro to AngularJS-Remote",
-    description: "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. Join us to get introduced to this wonderful framework and dive deep into its features. ",
-    location: "New York, NY, USA",
-  },
-
-  {
-    kind: "calendar#event",
     etag: "\"3187237556010000\"",
     id: "111vmlbl7p8gmc0fbf5u107p8u_20200723T070000Z",
     status: "confirmed",
@@ -133,6 +120,23 @@ const mockData = [
       "self": true
     }
   },
+
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187222416180000\"",
+    "id": "6co0ojl0l0j0rbh3g56vlc2s9i_20200724T010000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NmNvMG9qbDBsMGowcmJoM2c1NnZsYzJzOWlfMjAyMDA3MjRUMDEwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:44:15.000Z",
+    "updated": "2020-07-01T13:46:48.090Z",
+    "summary": "React California",
+    "description": "React is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nReact California is a non-profit organization offering free training sessions to React enthusiasts every Wednesday and Friday.\n\nJoin us in our free React training sessions and give your career a new direction.",
+    "location": "California, USA",
+    "creator": {
+      "email": "fullstackwebdev@careerfoundry.com",
+      "self": true
+    },
+  }
 
 ];
   
