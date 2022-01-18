@@ -1,38 +1,66 @@
 import puppeteer from 'puppeteer';
 
 
-// describe('Filter events by city', () => {
+describe('Filter events by city', () => {
  
-//   jest.setTimeout(30000);
-//   let browser, page;
-//   beforeAll(async () => {
-//     browser = await puppeteer.launch({
+  jest.setTimeout(30000);
+  let browser, page;
+  beforeAll(async () => {
+    browser = await puppeteer.launch({
       
-//     });
-//     page = await browser.newPage();
-//     await page.goto('http://localhost:3000/');
-//     await page.waitForSelector('.CitySearch');
-//   });
+    });
+    page = await browser.newPage();
+    await page.goto('http://localhost:3000/');
+    await page.waitForSelector('.CitySearch');
+  });
 
-//   afterAll(() => {
-//     browser.close();
-//   });
+  afterAll(() => {
+    browser.close();
+  });
 
-//   test('When the user has not searched for a city, show upcoming events from all cities', async () => {
-//     const filterEvents = await page.$('.query .event .event_details');
-//     expect(filterEvents).toBeNull();
-//   });
+  test('When the user has not searched for a city, show upcoming events from all cities', async () => {
+    const filterEvents = await page.$('.query .event .event_details');
+    expect(filterEvents).toBeNull();
+  });
 
-//   test('User should see a list of suggestions when they search for the city', async () => {
-//     await page.input('');
-//     const filterEvents = await page.$('.suggestions');
-//     expect(filterEvents).toBeDefined();
-//   });
+  test('When the user has  searched for a city, show upcoming events from all cities', async () => {
+    const myValue = 'Berlin';
+    const filterEvents = await page.$('.city', (element, myValue) => {
+        element.value = myValue;
+        const event = new Event('change');
+        element.dispatchEvent(event);
+    }, myValue);
+    const suggestions = await page.$('.suggestions');
+    expect(filterEvents).toBeDefined();
+    expect(suggestions).toBeDefined();
+
+  const select = await page.$('.suggestions li', () => {
+      const event = new Event('click');
+      element.dispatchEvent(event);
+  });
+  expect(select).toBeDefined();
+
+  const inputSelected = await page.$('.city')
+  expect(inputSelected).toBeDefined();
+
+  });
+
+  test('User should see a list of suggestions when they search for the city', async () => {
+    const filterEvents = await page.$('.suggestions');
+    expect(filterEvents).toBeDefined();
+  });
+
+  test('User should see a event list', async () => {
+    const findevents = await page.$('.EventList');
+    expect(findevents).toBeDefined();
+  });
+
+  
 
 
 
 
-// })
+})
 
 
 describe('show/hide an event details', () => {
