@@ -54,12 +54,6 @@ describe('Filter events by city', () => {
     const findevents = await page.$('.EventList');
     expect(findevents).toBeDefined();
   });
-
-  
-
-
-
-
 })
 
 
