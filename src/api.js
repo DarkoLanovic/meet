@@ -92,7 +92,6 @@ const getToken = async (code) => {
 
 }
 
-
 export const getAccessToken = async () => {
   // trying to retrive access token by looking in the localStorage
   const accessToken = localStorage.getItem('access_token');
