@@ -56,7 +56,7 @@ describe('Filter events by city', () => {
   });
 })
 
-
+// geature
 describe('show/hide an event details', () => {
   
   jest.setTimeout(30000);
