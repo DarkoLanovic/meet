@@ -29,7 +29,7 @@ describe('Filter events by city', () => {
         element.value = myValue;
         const event = new Event('change');
         element.dispatchEvent(event);
-    }, myValue);  
+    }, myValue);
     const suggestions = await page.$('.suggestions');
     expect(filterEvents).toBeDefined();
     expect(suggestions).toBeDefined();

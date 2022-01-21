@@ -10,7 +10,7 @@ class CitySearch extends Component {
   }
 
   // "Event hendler function" for <input> for the <change> event
-  handleInputChanged = event => {
+  handleInputChanged = (event) => {
     const value = event.target.value;
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;

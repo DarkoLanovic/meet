@@ -20,7 +20,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find('.location')).toHaveLength(1);
   });
   test('renders the show/hide details button', () => {
-    expect(EventWrapper.find('.show-details-btn')).toHaveLength(1);
+    expect(EventWrapper.find('.details-btn')).toHaveLength(1);
   });
 
   
@@ -36,7 +36,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       collapsed: true,
     });
-    EventWrapper.find('.show-details-btn').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
     expect(EventWrapper.state('collapsed')).toBe(true);
   });
 
@@ -44,7 +44,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       collapsed: false,
     });
-    EventWrapper.find('.hide-details-btn').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
     expect(EventWrapper.state('collapsed')).toBe(false);
   });
 });
