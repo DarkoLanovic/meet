@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 
 
+// Feature 1
 describe('Filter events by city', () => {
  
   jest.setTimeout(30000);
@@ -56,7 +57,7 @@ describe('Filter events by city', () => {
   });
 })
 
-// geature
+// Feature 2
 describe('show/hide an event details', () => {
   
   jest.setTimeout(30000);
