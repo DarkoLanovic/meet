@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class Alert extends Component {
    
     constructor(props) {
@@ -20,13 +21,13 @@ class Alert extends Component {
             </div>
         );
     }
-
 }
+
 
 class InfoAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = 'blue';
+        this.color = 'red';
     }
 }
 
