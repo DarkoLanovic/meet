@@ -8,7 +8,7 @@ class CitySearch extends Component {
     query: '',
     suggestions: [],
     showSuggestions: undefined,
-    infoText: ''
+    infoText: '',
   }
 
   // "Event hendler function" for <input> for the <change> event
@@ -21,7 +21,7 @@ class CitySearch extends Component {
     if (suggestions.length === 0) {
       this.setState({
         query: value,
-        infoText: 'The city you search can not be find.' <br> 'Please try again',
+        infoText: 'The city you search can not be find. Please try again',
       });
     } else {
       return this.setState({
