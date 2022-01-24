@@ -42,7 +42,9 @@ class CitySearch extends Component {
 
   render() {
     return (
+      
       <div className="CitySearch">
+        <InfoAlert text={this.state.infoText} />  
         
         <input 
             className="city"
@@ -55,7 +57,7 @@ class CitySearch extends Component {
             onFocus={() => { this.setState({ showSuggestions: true }); }}
         />
 
-        <InfoAlert text={this.state.infoText} />  
+      <InfoAlert text={this.state.infoText} />  
         
         <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map(suggestion => (
