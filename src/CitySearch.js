@@ -14,14 +14,14 @@ class CitySearch extends Component {
   // "Event hendler function" for <input> for the <change> event
   handleInputChanged = (event) => {
     const value = event.target.value;
-    this.setState({showSuggestions:true});
+    //this.setState({showSuggestions:true});
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
     if (suggestions.length === 0) {
       this.setState({
         query: value,
-        infoText: 'The city you search can not be find. Please try again',
+        infoText: 'The city you search can not be find. Please try again!',
       });
     } else {
       return this.setState({
@@ -35,7 +35,7 @@ class CitySearch extends Component {
   handleItemClicked = suggestion => {
     this.setState({
       query: suggestion,
-      showSuggestions: false
+      showSuggestions: false,
     });
     this.props.updateEvents(suggestion);
   };
@@ -43,35 +43,32 @@ class CitySearch extends Component {
   render() {
     return (
       
-      <div className="CitySearch">
-        <InfoAlert text={this.state.infoText} />  
-        
-        <input 
+      <div>
+        <h2 className="enter-city">Please Enter City Name</h2>
+        <InfoAlert className="InfoAlert" text={this.state.infoText} /> 
+        <div className="CitySearch">
+          <input 
             className="city"
             type="text"  
             value={this.state.query} 
-           
-            // Event listener 
-            onChange={this.handleInputChanged}         
-            
-            onFocus={() => { this.setState({ showSuggestions: true }); }}
-        />
-
-      <InfoAlert text={this.state.infoText} />  
-        
-        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
-          {this.state.suggestions.map(suggestion => (
-            <li 
-              key={suggestion} 
-              onClick={() => this.handleItemClicked(suggestion) }
-            > 
-              {suggestion} 
+            onChange={this.handleInputChanged}  // Event Listener       
+            onFocus={() => {this.setState({ showSuggestions: true }) }}
+          />  
+          
+          <ul className="suggestions" style={this.state.showSuggestions ? {}: {display: 'none'}}>
+            {this.state.suggestions.map((suggestion) => (
+              <li 
+                key={suggestion} 
+                onClick={() => this.handleItemClicked(suggestion) }
+              > 
+                {suggestion} 
+              </li>
+            ))}
+            <li onClick={() => this.handleItemClicked('all') }>
+              <b>See all cities</b>
             </li>
-          ))}
-          <li onClick={() => this.handleItemClicked('all') }>
-            <b>See all cities</b>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     );
   }
