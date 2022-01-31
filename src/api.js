@@ -42,7 +42,7 @@ export const getEvents = async () => {
     const result = await axios.get(url);
     
     // This allows the list to be loaded from "localStorage" 
-    // even when the user is offline (and the API isn’t available)
+    //  even when the user is offline (and the API isn’t available)
     if (result.data) {
       var locations = extractLocations(result.data.events);
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
@@ -87,7 +87,7 @@ const checkToken = async (accessToken) => {
 
 
 // This function takes your code and encodes it using "encodeURIComponent 
-// then uses the encoded code to get your token.
+//  then uses the encoded code to get your token.
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
