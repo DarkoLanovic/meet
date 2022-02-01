@@ -14,21 +14,32 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: 'all',
+    infoText: '',
   }
 
-  // to load events when the app loads - to make the API call and save inital data to state (?)
+  // To load events when the app loads - to make the API call and save inital data to state (?)
   componentDidMount() {
     const { numberOfEvents } = this.state;
     this.mounted = true;
     getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ 
-          events: events.slice(0, numberOfEvents), 
-          locations: extractLocations(events) 
-        });
+      if(!navigator.onLine) {
+        if (this.mounted) {
+          this.setState({ 
+            infoText: '⚠️ Warnong: No Internet Connection!',
+            events: events.slice(0, numberOfEvents), 
+            locations: extractLocations(events) 
+          });
+        }
+      } else {
+        if (this.mount) {
+          this,this.setState({
+            events: events.slice(0, numberOfEvents),
+            location: extractLocations(events)
+          });
+        }
       }
     });
-  }
+  }  
 
   componentWillUnmount() {
     this.mounted = false;
