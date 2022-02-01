@@ -11,15 +11,27 @@ import { getEvents, extractLocations } from './api';
 
 class App extends Component {
   state = {
-      events: [],
-      locations: [],
-      numberOfEvents: 32,
-      currentLocation: 'all',
-      infoText: '',
-    }
-  
-  
-  // To load events when the app loads - to make the API call and save inital data to state (?)
+    events: [],
+    locations: [],
+    numberOfEvents: 32,
+    currentLocation: 'all',
+    infoText: '',
+  }
+
+  // to load events when the app loads - to make the API call and save inital data to state (?)
+  // componentDidMount() {
+  //   const { numberOfEvents } = this.state;
+  //   this.mounted = true;
+  //   getEvents().then((events) => {
+  //     if (this.mounted) {
+  //       this.setState({ 
+  //         events: events.slice(0, numberOfEvents), 
+  //         locations: extractLocations(events) 
+  //       });
+  //     }
+  //   });
+  // }
+
   componentDidMount() {
     const { numberOfEvents } = this.state;
     this.mounted = true;
@@ -27,21 +39,22 @@ class App extends Component {
       if(!navigator.onLine) {
         if (this.mounted) {
           this.setState({ 
-            infoText: 'Warnong: No Internet Connection!',
+            infoText: 'Warning: No internet connection. Events displayed may not be up to date', 
             events: events.slice(0, numberOfEvents), 
             locations: extractLocations(events) 
           });
         }
       } else {
-        if (this.mount) {
-          this.setState({
-            events: events.slice(0, numberOfEvents),
-            location: extractLocations(events)
+        if (this.mounted) {
+          this.setState({ 
+            events: events.slice(0, numberOfEvents), 
+            locations: extractLocations(events) 
           });
         }
       }
+
     });
-  }  
+  }
 
   componentWillUnmount() {
     this.mounted = false;
@@ -73,9 +86,7 @@ class App extends Component {
     return (
       // This displays all the components within the App component
       <div className="App">
-        
-        <WarningAlert className="WarningAlert" text={this.state.infoText}/>
- 
+         
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
         <CitySearch 
               locations={this.state.locations} 
