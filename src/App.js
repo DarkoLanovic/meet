@@ -39,7 +39,7 @@ class App extends Component {
       if(!navigator.onLine) {
         if (this.mounted) {
           this.setState({ 
-            infoText: 'Warning: No internet connection. Events displayed may not be up to date', 
+            infoText: '⚠️ Warning: No internet connection. Events may not be up to date', 
             events: events.slice(0, numberOfEvents), 
             locations: extractLocations(events) 
           });
