@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './nprogress.css';
 import './App.css';
-import { WarningAlert } from './alert';
+import { WarningAlert } from './Alert';
 import EventList from './EventList'; 
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
@@ -10,16 +10,14 @@ import { getEvents, extractLocations } from './api';
 
 
 class App extends Component {
-  constructor(props){
-    super(props);
-      this.state = {
+  state = {
       events: [],
       locations: [],
       numberOfEvents: 32,
       currentLocation: 'all',
       infoText: '',
     }
-  } 
+  
   
   // To load events when the app loads - to make the API call and save inital data to state (?)
   componentDidMount() {
