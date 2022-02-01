@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './nprogress.css';
 import './App.css';
+import { WarningAlert } from './alert';
 import EventList from './EventList'; 
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
@@ -18,8 +19,8 @@ class App extends Component {
       currentLocation: 'all',
       infoText: '',
     }
-  }
-
+  } 
+  
   // To load events when the app loads - to make the API call and save inital data to state (?)
   componentDidMount() {
     const { numberOfEvents } = this.state;
