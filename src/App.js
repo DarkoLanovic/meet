@@ -9,12 +9,15 @@ import { getEvents, extractLocations } from './api';
 
 
 class App extends Component {
-  state = {
-    events: [],
-    locations: [],
-    numberOfEvents: 32,
-    currentLocation: 'all',
-    infoText: '',
+  constructor(props){
+    super(props);
+      this.state = {
+      events: [],
+      locations: [],
+      numberOfEvents: 32,
+      currentLocation: 'all',
+      infoText: '',
+    }
   }
 
   // To load events when the app loads - to make the API call and save inital data to state (?)
@@ -32,7 +35,7 @@ class App extends Component {
         }
       } else {
         if (this.mount) {
-          this,this.setState({
+          this.setState({
             events: events.slice(0, numberOfEvents),
             location: extractLocations(events)
           });
