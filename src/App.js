@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './nprogress.css';
 import './App.css';
-import { WarningAlert } from './Alert';
 import EventList from './EventList'; 
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import { WarningAlert } from './Alert';
 import { getEvents, extractLocations } from './api';
 
 
@@ -27,7 +27,7 @@ class App extends Component {
       if(!navigator.onLine) {
         if (this.mounted) {
           this.setState({ 
-            infoText: '⚠️ Warnong: No Internet Connection!',
+            infoText: 'Warnong: No Internet Connection!',
             events: events.slice(0, numberOfEvents), 
             locations: extractLocations(events) 
           });
@@ -73,7 +73,9 @@ class App extends Component {
     return (
       // This displays all the components within the App component
       <div className="App">
-         
+        
+        <WarningAlert className="WarningAlert" text={this.state.infoText}/>
+ 
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
         <CitySearch 
               locations={this.state.locations} 
