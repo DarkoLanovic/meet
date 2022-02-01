@@ -7,8 +7,6 @@ import NumberOfEvents from './NumberOfEvents';
 import { WarningAlert } from './Alert';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
-import { get } from 'lodash';
-
 
 
 class App extends Component {
