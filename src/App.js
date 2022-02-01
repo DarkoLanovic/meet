@@ -86,6 +86,8 @@ class App extends Component {
     return (
       // This displays all the components within the App component
       <div className="App">
+
+        <WarningAlert className="WarningAlert" text={this.state.infoText}/>
          
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
         <CitySearch 
