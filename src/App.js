@@ -24,11 +24,11 @@ class App extends Component {
   }
 
   // to load events when the app loads - to make the API call and save inital data to state (?)
-  componentDidMount() {
+   async componentDidMount() {
     const { numberOfEvents } = this.state;
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
-    const isTokenValid = (checkToken(accessToken)).error ? false : true;
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
