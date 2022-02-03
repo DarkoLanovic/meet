@@ -7,7 +7,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { WarningAlert } from './Alert';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 
 class App extends Component {
@@ -105,7 +105,7 @@ class App extends Component {
 
         <WarningAlert className="WarningAlert" text={this.state.infoText}/>
 
-        <h1>Meet Your Opportunities </h1>
+        <h1>Meet Up Your Opportunities </h1>
         <hr/>
          
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
@@ -129,14 +129,12 @@ class App extends Component {
           }}
         >
           <CartesianGrid />
-          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-          <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+          <XAxis type="category" dataKey="city" name="city" />
+          <YAxis type="number" dataKey="number" allowDecimals={false} name="number of events" />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         
-
-
         {/* Pass the state to EventList as a prop of events */}
         <EventList events={this.state.events} /> 
 
