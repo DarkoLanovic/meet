@@ -7,6 +7,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { WarningAlert } from './Alert';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 
 
 class App extends Component {
@@ -80,6 +81,16 @@ class App extends Component {
     this.updateEvents(currentLocation, eventCount);
   }
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
+    return data;
+  };
+
 
   // -------- RENDER --------
   render() {
@@ -93,6 +104,9 @@ class App extends Component {
       <div className="App">
 
         <WarningAlert className="WarningAlert" text={this.state.infoText}/>
+
+        <h1>Meet Your Opportunities </h1>
+        <hr/>
          
          {/* Pass the "locations" and "updateEvents" to CitySearch as a prop  */}
         <CitySearch 
@@ -104,7 +118,25 @@ class App extends Component {
               numberOfEvents={this.state.numberOfEvents} 
               updateNumberOfEvents={this.updateNumberOfEvents}  
         />
+
+        <h4>Check the Events you may like!</h4>
+
+        <ScatterChart
+          width={400}
+          height={400}
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}
+        >
+          <CartesianGrid />
+          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
+          <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Scatter data={this.getData()} fill="#8884d8" />
+        </ScatterChart>
         
+
+
         {/* Pass the state to EventList as a prop of events */}
         <EventList events={this.state.events} /> 
 
