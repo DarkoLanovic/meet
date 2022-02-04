@@ -90,8 +90,8 @@ input[type="number"] {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  padding: 5px 8px;
-  border-radius: 4px;
+  /* padding: 5px 8px; */
+  border-radius: 10px;
   outline: none;
   cursor: pointer;
 }
