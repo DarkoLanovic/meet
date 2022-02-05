@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 2% 5%;
+  /* padding: 2% 5%; */
 }
 
 .App * {
@@ -79,9 +79,9 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding: 20px 1px 10px;
   margin-bottom: 15px;
-  text-align: center;
+  /* text-align: center; */
   border: 1px solid #49516F;
   border-radius: 40px;
   position: relative;
