@@ -4,6 +4,7 @@ import './App.css';
 import EventList from './EventList'; 
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { WarningAlert } from './Alert';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
