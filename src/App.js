@@ -120,15 +120,19 @@ class App extends Component {
         />
 
         <h4>Check the Events you may like!</h4>
-        <ResponsiveContainer height={400} >
-          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" />
-            <YAxis type="number" dataKey="number" allowDecimals={false} name="number of events" />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-        </ResponsiveContainer>
+
+        <div className="data-vis-wrapper">
+          <ResponsiveContainer height={400} >
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" />
+              <YAxis type="number" dataKey="number" allowDecimals={false} name="number of events" />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+          </ResponsiveContainer>
+          <EventGenre events={events} />
+        </div>
         
         {/* Pass the state to EventList as a prop of events */}
         <EventList events={this.state.events} /> 
