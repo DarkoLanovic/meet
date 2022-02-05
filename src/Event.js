@@ -46,7 +46,7 @@ class Event extends Component {
             </button>
 
           : <button 
-                  className="details-btn btn-text"  
+                  className="details-btn btn-text-event"  
                   onClick={() => this.changeShow(showDetails)}
             >
               Show Details

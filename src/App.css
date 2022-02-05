@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 10% 20%;
+  padding: 2% 5%;
 }
 
 .App * {
@@ -195,7 +195,7 @@ input[type="number"] {
   width: 18px;
   height: 18px;
 }
-.btn-text {
+.btn-text-event {
   float: right;
   margin: 11px 11px 0 0;
   color: #fff;
