@@ -119,7 +119,7 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents} 
           updateNumberOfEvents={this.updateNumberOfEvents}  
         />
-
+        <br/>
         <h4>Check the Events you may like!</h4>
 
         <div className="data-vis-wrapper">
