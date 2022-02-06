@@ -27,7 +27,7 @@
     .google-btn:hover {
     box-shadow: 0 0 6px #4285f4;
     }
-    
+
     .google-btn:active {
     background: #1669f2;
     }
@@ -54,9 +54,10 @@
     letter-spacing: 0.2px;
     font-family: "Roboto";
     background-color: #4285f4;
-    width: 80%;
-    height: 100%;
+    /* width: 80%;
+    height: 100%; */
     text-align: center;
+    margin-right: 20px;
     }
 
 
