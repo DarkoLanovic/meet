@@ -17,7 +17,7 @@ return props.showWelcomeScreen ?
 
 <div class="google-icon-wrapper">
 
-<img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Log o.svg"
+<img class="google-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvQlCyX_blcTa7zpGF5RgD1a_rGwb7IIBEe99yu2g6heT3zRsy1Wgjdz0U8v3pOCndWjk&usqp=CAU"
 
 alt="Google sign-in"
 
