@@ -42,7 +42,12 @@
     }
     .google-icon {
         width: 40px;
-        height: 40px;
+        height: 42px;
+        /* position: absolute; */
+        margin-top: 0px;
+        margin-left: -10px;
+        /* width: 18px; */
+        /* height: 18px;
     }
     .btn-text {
     float: right;
@@ -56,7 +61,7 @@
     text-align: center;
     margin-right: 20px;
     border: 0px;
-    padding-top: 1rem;
+    
     }
 
 
