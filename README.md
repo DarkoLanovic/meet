@@ -29,7 +29,9 @@ Key Features:
     use the Google Calendar API and OAuth2 authentication flow
     use serverless functions for the authorization server
 
-### How to get the app running ### npm run start ###
+### How to get the app running
+
+    npm run start
 
 ### App dependencies
 
