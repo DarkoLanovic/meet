@@ -6,11 +6,11 @@
 The application is a serverless, progressive web application (PWA) built with React and developed by using a Test-Driven Development (TDD) approach. The application uses the Google Calendar API to fetch upcoming events.
 
 
-- To install the app and its dependencies: run npm install
+### To install the app and its dependencies: ### run npm install
 
-- To run tests: npm run test
+### To run tests: ### npm run test
 
-- How to get the app running: npm run start
+### How to get the app running: ### npm run start
 
 
 ### Test Runner
